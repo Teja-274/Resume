@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Experience – Teja Vuppala</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .timeline{position:relative;padding-left:38px;}
+    .timeline::before{content:'';position:absolute;left:14px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,#8B0000 15%,#4A007A 50%,#8B0000 85%,transparent);}
+    .tl-item{position:relative;margin-bottom:40px;}
+    .tl-item::before{content:'💀';position:absolute;left:-32px;top:20px;font-size:1rem;z-index:2;filter:drop-shadow(0 0 6px rgba(139,0,0,0.8));}
+    .tl-item::after{content:'';position:absolute;left:-16px;top:28px;width:16px;height:1px;background:rgba(120,30,200,0.3);}
+    .exp-card{padding:24px 26px;}
+    .exp-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:5px;flex-wrap:wrap;}
+    .exp-company{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:900;color:var(--text-primary);}
+    .exp-period{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:#CC1111;padding:3px 10px;border-radius:5px;background:rgba(139,0,0,0.15);border:1px solid rgba(140,10,0,0.3);white-space:nowrap;flex-shrink:0;}
+    .exp-role{font-size:0.88rem;color:#BB77FF;font-weight:600;margin-bottom:2px;}
+    .exp-dept{font-size:0.74rem;color:var(--text-muted);margin-bottom:14px;font-style:italic;}
+    .exp-metrics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+    .metric-chip{display:flex;align-items:center;gap:5px;padding:3px 11px;border-radius:6px;font-size:0.72rem;font-weight:700;background:rgba(0,100,40,0.12);border:1px solid rgba(0,150,60,0.25);color:#44CC66;font-family:'Cinzel',serif;}
+    .exp-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:16px;}
+    .exp-bullets li{display:flex;align-items:flex-start;gap:9px;font-size:0.84rem;color:var(--text-body);line-height:1.65;}
+    .exp-bullets li::before{content:'🕸️';font-size:0.65rem;margin-top:4px;flex-shrink:0;}
+    .exp-bullets strong{color:#FF8855;font-weight:700;}
+    .exp-tags{display:flex;flex-wrap:wrap;gap:6px;padding-top:14px;border-top:1px solid var(--card-border);}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">☠ TV</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><span>💀</span><span>Home</span></a></li>
+      <li><a href="summary.html"><span>👁️</span><span>Summary</span></a></li>
+      <li><a href="skills.html"><span>🔮</span><span>Skills</span></a></li>
+      <li><a href="experience.html"><span>⚰️</span><span>Experience</span></a></li>
+      <li><a href="education.html"><span>📜</span><span>Education</span></a></li>
+      <li><a href="certifications.html"><span>🕯️</span><span>Certs</span></a></li>
+      <li class="hire-link"><a href="whyHireMe.html"><span>✨</span><span>Hire Me</span></a></li>
+    </ul>
+  </nav>
+  <div class="page"><div class="page-content">
+    <div class="section-header reveal">
+      <div class="section-label">Career Journey</div>
+      <h1 class="section-title">Work Experience</h1>
+      <p class="section-subtitle">Conjuring real impact through data, models, and insights</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="glass-card exp-card reveal">
+          <div class="exp-head"><div><div class="exp-company">Utah State University</div><div class="exp-role">Research Assistant</div><div class="exp-dept">Data Science &amp; Machine Learning</div></div><span class="exp-period">May 2025 – Present</span></div>
+          <div class="exp-metrics"><div class="metric-chip">📊 500+ Features</div><div class="metric-chip">🎯 0.81 Variance Explained</div><div class="metric-chip">⚗️ MLflow Tracked</div></div>
+          <ul class="exp-bullets">
+            <li>Cleaned and preprocessed a food composition dataset with <strong>500+ features</strong> using Pandas and NumPy; handled missing values, outlier detection, and schema validation.</li>
+            <li>Used <strong>PCA</strong> to reduce dimensionality across 500+ nutrient variables, achieving <strong>0.81 explained variance</strong> — validated against biological reference standards.</li>
+            <li>Designed a <strong>nutrient scoring formula</strong> to quantify food quality metrics, iterating on domain feedback and benchmark comparisons.</li>
+            <li>Ran ML experiments comparing <strong>Linear, Ridge, Lasso</strong> vs <strong>Random Forest, Gradient Boosting</strong>; tracked all runs with <strong>MLflow</strong>.</li>
+            <li>Used <strong>Cursor and Claude Code</strong> throughout — cutting development time significantly.</li>
+          </ul>
+          <div class="exp-tags"><span class="badge badge-blue">Python</span><span class="badge badge-blue">Pandas</span><span class="badge badge-purple">MLflow</span><span class="badge badge-purple">PCA</span><span class="badge badge-green">Scikit-learn</span><span class="badge badge-green">Matplotlib</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="glass-card exp-card reveal reveal-delay-1">
+          <div class="exp-head"><div><div class="exp-company">Utah State University</div><div class="exp-role">Teaching Assistant</div><div class="exp-dept">Advanced Data Mining</div></div><span class="exp-period">Sep 2024 – April 2025</span></div>
+          <div class="exp-metrics"><div class="metric-chip">🎯 91.4% Accuracy</div><div class="metric-chip">👥 30+ Students</div><div class="metric-chip">📊 RMSE: 12,735</div></div>
+          <ul class="exp-bullets">
+            <li>Assisted in delivering <strong>Advanced Data Mining</strong> to 30+ graduate students; prepared assignments on preprocessing, feature engineering, and predictive modeling.</li>
+            <li>Built a <strong>Salary Prediction model</strong> using Random Forest (<strong>91.4% accuracy, RMSE: 12,735</strong>) with Bayesian hyperparameter tuning.</li>
+            <li><strong>Medical Notes Classification:</strong> Built KNN, Neural Network, and LSTM-RNN models — best macro F-score of <strong>0.732</strong>.</li>
+            <li>Used <strong>ChatGPT Advanced Data Analysis</strong> to rapidly prototype evaluation scripts, reducing turnaround time significantly.</li>
+          </ul>
+          <div class="exp-tags"><span class="badge badge-blue">Scikit-learn</span><span class="badge badge-purple">LSTM-RNN</span><span class="badge badge-purple">Neural Networks</span><span class="badge badge-green">Random Forest</span><span class="badge badge-pink">ChatGPT</span></div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="glass-card exp-card reveal reveal-delay-2">
+          <div class="exp-head"><div><div class="exp-company">TruEquations</div><div class="exp-role">Data Analyst</div><div class="exp-dept">Growth &amp; Revenue Analytics</div></div><span class="exp-period">Jan 2023 – Jul 2024</span></div>
+          <div class="exp-metrics"><div class="metric-chip">⏱️ 30% Less Reporting</div><div class="metric-chip">🎯 15% Better Targeting</div><div class="metric-chip">📈 10–15% ROI Uplift</div></div>
+          <ul class="exp-bullets">
+            <li>Built <strong>Power BI dashboards</strong> to track sales KPIs — reduced manual reporting time by <strong>30%</strong>.</li>
+            <li>Conducted <strong>SQL-driven market trend analysis</strong> across 10+ segments; improved lead targeting precision by <strong>15%</strong>.</li>
+            <li>Built and maintained <strong>ETL pipelines</strong> in SQL and Excel; automated recurring data refresh workflows.</li>
+            <li>Applied <strong>statistical forecasting</strong> to model customer demand trends, improving campaign ROI by <strong>10–15%</strong>.</li>
+          </ul>
+          <div class="exp-tags"><span class="badge badge-blue">SQL</span><span class="badge badge-blue">Power BI</span><span class="badge badge-purple">ETL</span><span class="badge badge-green">Excel</span><span class="badge badge-orange">CRM</span><span class="badge badge-pink">Apollo.io</span></div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+  <script src="js/main.js"></script><script src="js/scene.js"></script>
+  <script>buildHauntScene('experience');</script>
+</body>
+</html>

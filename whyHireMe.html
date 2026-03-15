@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What If You Hire Me? – Teja Vuppala</title>
+  <meta name="description" content="What happens if you hire Teja Vuppala? A bright, joyful vision of the future."/>
+  <!-- Opposite fonts: playful, rounded -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    /* =============================================
+       OPPOSITE THEME — BRIGHT, JOYFUL, SUNNY
+       (The antithesis of every horror page)
+       ============================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.65;
+      /* OPPOSITE: clear sky blue */
+      background: linear-gradient(to bottom, #87CEEB 0%, #B0E0F7 50%, #D4F1C4 100%);
+      color: #2D1A00;
+    }
+
+    /* ---- SUNSHINE BACKGROUND ---- */
+    .sunshine-scene {
+      position: fixed;
+      inset: 0;
+      z-index: -10;
+      overflow: hidden;
+    }
+
+    /* ---- RAINBOW ARC — visible semicircle across the sky ---- */
+    .rainbow {
+      position: absolute;
+      top: 5%; left: 50%;
+      transform: translateX(-50%);
+      width: 130vw; height: 520px;
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      border-top: 22px solid rgba(255,0,0,0.55);
+      border-left: 22px solid transparent;
+      border-right: 22px solid transparent;
+      box-shadow:
+        0 -18px 0 rgba(255,120,0,0.5),
+        0 -36px 0 rgba(255,220,0,0.5),
+        0 -54px 0 rgba(60,200,60,0.5),
+        0 -72px 0 rgba(30,80,255,0.5),
+        0 -90px 0 rgba(130,0,210,0.45);
+      pointer-events: none;
+      animation: rainbowShine 6s ease-in-out infinite;
+    }
+    @keyframes rainbowShine {
+      0%, 100% { opacity: 0.75; }
+      50%       { opacity: 1; }
+    }
+
+    /* ---- SUN — moved lower (top 18%) ---- */
+    .happy-sun {
+      position: absolute;
+      top: 18%; right: 7%;
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #FFFDE0 25%, #FFE44D 60%, #FFD000 80%, transparent 100%);
+      box-shadow:
+        0 0 0 12px rgba(255,224,80,0.18),
+        0 0 55px 25px rgba(255,215,0,0.45),
+        0 0 110px 55px rgba(255,190,0,0.22);
+      animation: sunPulse 4s ease-in-out infinite;
+    }
+    /* 8-point sun rays */
+    .happy-sun::before {
+      content: '';
+      position: absolute;
+      inset: -28px;
+      background: repeating-conic-gradient(
+        rgba(255,215,0,0.35) 0deg 8deg,
+        transparent 8deg 45deg
+      );
+      border-radius: 50%;
+      animation: sunSpin 18s linear infinite;
+    }
+    .happy-sun::after {
+      content: '';
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,220,0,0.28);
+      animation: raysExpand 3s ease-out infinite;
+    }
+    @keyframes sunSpin  { to { transform: rotate(360deg); } }
+    @keyframes sunPulse { 0%,100%{box-shadow:0 0 0 12px rgba(255,224,80,0.18),0 0 55px 25px rgba(255,215,0,0.45),0 0 110px 55px rgba(255,190,0,0.22);} 50%{box-shadow:0 0 0 16px rgba(255,224,80,0.28),0 0 75px 35px rgba(255,220,0,0.65),0 0 140px 70px rgba(255,200,0,0.35);} }
+    @keyframes raysExpand { 0%{transform:scale(1);opacity:0.5;} 100%{transform:scale(2);opacity:0;} }
+
+    /* ---- CLOUDS — moved lower (top 28%+) ---- */
+    .happy-clouds { position: absolute; top: 0; left: 0; right: 0; height: 65%; }
+    .puffy-cloud {
+      position: absolute;
+      background: rgba(255,255,255,0.97);
+      border-radius: 100px;
+      box-shadow: 0 6px 28px rgba(160,210,255,0.35);
+      animation: cloudFloat linear infinite;
+    }
+    .puffy-cloud::before, .puffy-cloud::after { content:''; position:absolute; background: inherit; border-radius:50%; }
+    /* Cloud positions shifted down */
+    .pc1 { width:180px; height:54px; top:28%; animation-duration:55s; }
+    .pc1::before { width:80px; height:80px; top:-40px; left:28px; }
+    .pc1::after  { width:65px; height:65px; top:-32px; right:32px; }
+    .pc2 { width:130px; height:42px; top:38%; animation-duration:40s; animation-delay:-18s; }
+    .pc2::before { width:60px; height:60px; top:-30px; left:20px; }
+    .pc2::after  { width:48px; height:48px; top:-24px; right:22px; }
+    .pc3 { width:220px; height:65px; top:32%; animation-duration:70s; animation-delay:-32s; opacity:0.9; }
+    .pc3::before { width:95px; height:95px; top:-48px; left:38px; }
+    .pc3::after  { width:75px; height:75px; top:-38px; right:48px; }
+    .pc4 { width:155px; height:48px; top:42%; animation-duration:62s; animation-delay:-45s; opacity:0.85; }
+    .pc4::before { width:70px; height:70px; top:-34px; left:22px; }
+    .pc4::after  { width:56px; height:56px; top:-28px; right:28px; }
+    @keyframes cloudFloat { from{left:-260px;} to{left:110vw;} }
+
+    /* ---- BIRDS flying across sky ---- */
+    .park-bird {
+      position: fixed;
+      pointer-events: none;
+      z-index: 18;
+      animation: birdFly linear infinite;
+      font-size: 1.4rem;
+      filter: drop-shadow(0 2px 6px rgba(0,80,160,0.18));
+    }
+    @keyframes birdFly {
+      0%   { transform: translateX(-100px) translateY(0) scaleX(1); }
+      20%  { transform: translateX(20vw)  translateY(-22px) scaleX(1); }
+      50%  { transform: translateX(52vw)  translateY(-8px) scaleX(-1); }
+      80%  { transform: translateX(82vw)  translateY(-28px) scaleX(-1); }
+      100% { transform: translateX(115vw) translateY(-5px) scaleX(-1); }
+    }
+    /* V-formation flap helper */
+    .bird-flap {
+      display: inline-block;
+      animation: wingFlap 0.5s ease-in-out infinite alternate;
+    }
+    @keyframes wingFlap {
+      from { transform: scaleY(1); }
+      to   { transform: scaleY(0.55); }
+    }
+
+    /* ---- BREEZE — swaying grass blades ---- */
+    .breeze-layer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .grass-blade {
+      flex: 1;
+      height: 40px;
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(to top, #2A6B2A, #5CB85C);
+      transform-origin: bottom center;
+      animation: breezeWave ease-in-out infinite;
+      margin: 0 1px;
+    }
+    @keyframes breezeWave {
+      0%,100%  { transform: rotate(-6deg) scaleY(0.85); }
+      50%      { transform: rotate(6deg)  scaleY(1); }
+    }
+
+    /* ---- PARK TREES (CSS) ---- */
+    .park-tree {
+      position: absolute;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .park-tree svg {
+      display: block;
+      animation: treeSway 3.5s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+    .park-tree .trunk {
+      width: 18px;
+      background: linear-gradient(to right, #6B3A1F, #8B4513, #6B3A1F);
+      border-radius: 4px;
+      margin: 0 auto;
+    }
+    .park-tree .foliage {
+      border-radius: 50% 55% 50% 55%;
+      background: radial-gradient(ellipse at 40% 35%, #6ECC5A, #3A9E32 60%, #2A7A28);
+      box-shadow: 0 6px 22px rgba(0,100,0,0.25);
+      margin: 0 auto;
+      transform-origin: bottom center;
+      animation: treeSway 3.5s ease-in-out infinite;
+    }
+    .park-tree .foliage-mid {
+      border-radius: 50% 55% 50% 55%;
+      background: radial-gradient(ellipse at 40% 35%, #7ADA65, #4AAE3C 60%, #2D8A2A);
+      box-shadow: 0 4px 14px rgba(0,100,0,0.2);
+      margin: 0 auto;
+      transform-origin: bottom center;
+      animation: treeSway 3.5s 0.3s ease-in-out infinite;
+    }
+    @keyframes treeSway {
+      0%,100% { transform: rotate(-2deg); }
+      50%     { transform: rotate(2deg); }
+    }
+
+    /* Lush green ground */
+    .green-ground {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 22%;
+      background: linear-gradient(to bottom, #58C058 0%, #3D8B3D 60%, #2A6B2A 100%);
+      z-index: 1;
+    }
+
+    /* Flowers */
+    .happy-flower {
+      position: absolute;
+      bottom: 0;
+      font-size: 1.5rem;
+      animation: flowerBob 1.8s ease-in-out infinite;
+    }
+    @keyframes flowerBob { 0%,100%{transform:translateY(0) rotate(-4deg);} 50%{transform:translateY(-8px) rotate(4deg);} }
+
+    /* Rolling hills */
+    .happy-hills {
+      position: absolute;
+      bottom: 18%; left: 0; right: 0;
+      height: 160px;
+      background: radial-gradient(ellipse 120% 100% at 50% 100%, #7AC97A, #5AB05A);
+      border-radius: 60% 80% 0 0 / 60% 60% 0 0;
+    }
+    .happy-hills::before {
+      content: '';
+      position: absolute;
+      left: -10%; right: 30%; top: 10%; bottom: -4px;
+      background: radial-gradient(ellipse 120% 100% at 50% 100%, #8ADA8A, #6ABF6A);
+      border-radius: 55% 80% 0 0 / 55% 55% 0 0;
+    }
+
+    /* Butterflies */
+    .butterfly {
+      position: fixed;
+      font-size: 1.4rem;
+      pointer-events: none;
+      animation: butterflyFly linear infinite;
+      opacity: 0.85;
+      z-index: 15;
+    }
+    @keyframes butterflyFly {
+      0%   { transform: translateX(-80px) translateY(0); }
+      25%  { transform: translateX(25vw) translateY(-40px); }
+      50%  { transform: translateX(55vw) translateY(-20px); }
+      75%  { transform: translateX(80vw) translateY(-50px); }
+      100% { transform: translateX(115vw) translateY(-10px); }
+    }
+
+    /* Happy runners */
+    .happy-runner {
+      position: fixed;
+      bottom: 90px;
+      z-index: 20;
+      pointer-events: none;
+      animation: happyRun 8s linear infinite;
+    }
+    .happy-runner .r-body {
+      font-size: 3rem;
+      animation: happyBounce 0.4s ease-in-out infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .happy-runner .r-acc  { font-size: 1.6rem; animation: accWiggle 0.35s ease-in-out infinite alternate; }
+    .happy-runner .r-shad { width:40px; height:8px; background:rgba(0,0,0,0.12); border-radius:50%; margin-top:-4px; animation:shadPulse 0.4s ease-in-out infinite; }
+    @keyframes happyRun   { from{transform:translateX(-120px);} to{transform:translateX(110vw);} }
+    @keyframes happyBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
+    @keyframes accWiggle  { from{transform:rotate(-15deg);} to{transform:rotate(15deg);} }
+    @keyframes shadPulse  { 0%,100%{transform:scaleX(1);opacity:0.12;} 50%{transform:scaleX(0.7);opacity:0.06;} }
+
+    /* =============================================
+       NAVIGATION - opposite of haunted nav
+       ============================================= */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 2px solid rgba(255, 200, 100, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 36px;
+      box-shadow: 0 2px 24px rgba(200, 150, 0, 0.12);
+    }
+    .nav-logo {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FF9933, #FF6B8A, #6600CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .nav-links { display:flex; gap:4px; list-style:none; }
+    .nav-links a {
+      display:flex; align-items:center; gap:5px;
+      padding:6px 12px; border-radius:8px;
+      text-decoration:none; font-size:0.78rem; font-weight:700;
+      color: #9B7B6A; transition:0.3s ease;
+      border:1.5px solid transparent;
+      font-family:'Nunito',sans-serif;
+    }
+    .nav-links a:hover { color:#2D1A00; background:rgba(255,200,100,0.12); border-color:rgba(210,165,100,0.3); }
+    .nav-links .horror-link a {
+      color:#CCC0E0 !important;
+      background: rgba(10,5,25,0.7) !important;
+      border-color: rgba(90,20,140,0.4) !important;
+    }
+
+    /* =============================================
+       PAGE CONTENT
+       ============================================= */
+    .page { min-height:100vh; padding-top:70px; position:relative; z-index:1; }
+    .page-content { max-width:1100px; margin:0 auto; padding:55px 40px 130px; }
+
+    /* ---- Opposite cards: warm white instead of dark glass ---- */
+    .bright-card {
+      background: rgba(255, 255, 255, 0.90);
+      border: 2px solid rgba(255, 200, 100, 0.4);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 8px 32px rgba(200, 150, 0, 0.1);
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .bright-card:hover {
+      border-color: rgba(255, 150, 50, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(200, 100, 0, 0.15);
+    }
+
+    /* ---- Big hero area ---- */
+    .hire-hero {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    .hire-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, rgba(255,200,50,0.2), rgba(100,220,100,0.2));
+      border: 2px solid rgba(200, 180, 50, 0.4);
+      color: #7A5000;
+      margin-bottom: 22px;
+      font-family: 'Nunito', sans-serif;
+      animation: badgePop 0.6s ease both;
+    }
+    @keyframes badgePop { from{opacity:0;transform:scale(0.8);} to{opacity:1;transform:scale(1);} }
+
+    .hire-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 14px;
+      animation: titleSlide 0.65s ease both;
+    }
+    @keyframes titleSlide { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
+    .hire-title .t1 { display:block; color:#2D1A00; }
+    .hire-title .t2 { display:block; background:linear-gradient(135deg,#FF6B8A,#FF9933,#FFD700); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    .hire-sub {
+      font-size: 1.05rem;
+      color: #9B7B6A;
+      max-width: 540px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      animation: titleSlide 0.65s 0.2s ease both;
+    }
+
+    /* ---- Before/After banner ---- */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+    @media(max-width:700px){ .before-after{grid-template-columns:1fr;} }
+    .before-side {
+      background: rgba(10,5,25,0.92);
+      border: 1.5px solid rgba(80,20,140,0.4);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .after-side {
+      background: rgba(255,255,255,0.95);
+      border: 2px solid rgba(200,200,0,0.4);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 4px 24px rgba(200,180,0,0.12);
+    }
+    .ba-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ba-label-dark { color:#8B0000; font-family:'Cinzel',serif; }
+    .ba-label-bright { color:#AA6600; font-family:'Nunito',sans-serif; }
+    .ba-item { display:flex; gap:10px; align-items:flex-start; margin-bottom:10px; font-size:0.83rem; }
+    .ba-item-dark { color:#9A8AAA; }
+    .ba-item-bright { color:#5C3D2E; }
+    .ba-bullet-dark { color:#8B0000; flex-shrink:0; }
+    .ba-bullet-bright { color:#55AA55; flex-shrink:0; }
+    .arrow-mid { font-size:2rem; text-align:center; color:#FFD700; animation:arrowBounce 1s ease-in-out infinite; }
+    @keyframes arrowBounce { 0%,100%{transform:translateX(0);} 50%{transform:translateX(6px);} }
+
+    /* ---- Grid cards ---- */
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .outcome-card {
+      text-align: center;
+      padding: 26px 20px;
+    }
+    .outcome-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+      animation: iconPop 2s ease-in-out infinite;
+    }
+    .outcome-title { font-family:'Nunito',sans-serif; font-size:1rem; font-weight:800; color:#2D1A00; margin-bottom:6px; }
+    .outcome-body  { font-size:0.8rem; color:#9B7B6A; line-height:1.6; }
+    .outcome-stat {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #FF9933, #FF6B8A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 4px;
+    }
+    @keyframes iconPop { 0%,100%{transform:scale(1);} 50%{transform:scale(1.12);} }
+
+    /* ---- Chip tags ---- */
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 13px;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 2px solid;
+      font-family: 'Nunito', sans-serif;
+      transition: 0.3s ease;
+    }
+    .chip-sun    { color:#AA6600; background:rgba(255,200,50,0.12); border-color:rgba(255,200,50,0.3); }
+    .chip-coral  { color:#CC3300; background:rgba(255,100,50,0.10); border-color:rgba(255,100,50,0.3); }
+    .chip-green  { color:#2A7A2A; background:rgba(50,180,80,0.10); border-color:rgba(50,180,80,0.3); }
+    .chip-purple { color:#6600AA; background:rgba(150,50,220,0.10); border-color:rgba(150,50,220,0.3); }
+    .chip-blue   { color:#005599; background:rgba(50,120,220,0.10); border-color:rgba(50,120,220,0.3); }
+
+    /* ---- CTA ---- */
+    .cta-section { text-align:center; padding:40px 20px; }
+    .cta-section h2 { font-family:'Nunito',sans-serif; font-size:2rem; font-weight:900; color:#2D1A00; margin-bottom:12px; }
+    .cta-section p  { color:#9B7B6A; max-width:480px; margin:0 auto 28px; font-size:0.92rem; line-height:1.7; }
+    .btn-sunshine {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:13px 32px; border-radius:100px;
+      font-family:'Nunito',sans-serif; font-size:1rem; font-weight:900;
+      background: linear-gradient(135deg, #FF6B8A, #FF9933, #FFD700);
+      color:#fff; text-decoration:none; border:none;
+      box-shadow: 0 6px 28px rgba(255,120,50,0.4);
+      transition:0.3s ease; cursor:pointer;
+      animation: ctaBounce 2s ease-in-out infinite;
+    }
+    .btn-sunshine:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 10px 36px rgba(255,120,50,0.6); }
+    @keyframes ctaBounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-4px);} }
+
+    .btn-ghost {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:12px 28px; border-radius:100px;
+      font-family:'Nunito',sans-serif; font-size:0.95rem; font-weight:700;
+      background:rgba(10,5,25,0.88); color:#CCC0E0;
+      text-decoration:none; border:1.5px solid rgba(90,20,140,0.4);
+      box-shadow:0 4px 20px rgba(0,0,0,0.3);
+      transition:0.3s ease; margin-left:12px;
+    }
+    .btn-ghost:hover { background:rgba(20,10,45,0.95); transform:translateY(-2px); }
+
+    /* Sub title */
+    .sub-title { font-family:'Nunito',sans-serif; font-size:1.1rem; font-weight:800; color:#2D1A00; margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+    .sub-title::after { content:''; flex:1; height:2px; background:rgba(255,200,100,0.3); border-radius:2px; }
+
+    /* Skill pills opposite */
+    .bright-pills { display:flex; flex-wrap:wrap; gap:9px; }
+    .bright-pill {
+      padding:7px 14px; border-radius:8px;
+      font-size:0.82rem; font-weight:700;
+      background:rgba(255,250,225,0.85);
+      border:1.5px solid rgba(255,200,80,0.35);
+      color:#5C3D2E;
+      font-family:'Nunito',sans-serif;
+      transition:0.3s ease;
+    }
+    .bright-pill:hover { background:rgba(255,240,180,0.95); border-color:rgba(255,150,50,0.5); transform:translateY(-2px); box-shadow:0 4px 14px rgba(200,100,0,0.12); }
+
+    @media(max-width:768px){ .nav { padding:0 16px; } .page-content { padding:36px 18px 100px; } }
+  </style>
+</head>
+<body>
+
+  <!-- PARK SUNSHINE BACKGROUND -->
+  <div class="sunshine-scene">
+    <!-- Sky blue gradient -->
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom, #5BBCDE 0%, #87CEEB 30%, #B8E2F2 55%, #D4F1C4 80%, #A8D878 100%);"></div>
+
+    <!-- Rainbow arc -->
+    <div class="rainbow"></div>
+
+    <!-- Sun (lower) -->
+    <div class="happy-sun"></div>
+
+    <!-- Fluffy clouds (lower positions) -->
+    <div class="happy-clouds">
+      <div class="puffy-cloud pc1"></div>
+      <div class="puffy-cloud pc2"></div>
+      <div class="puffy-cloud pc3"></div>
+      <div class="puffy-cloud pc4"></div>
+    </div>
+
+    <!-- Rolling hills -->
+    <div class="happy-hills"></div>
+
+    <!-- Park trees — SVG illustrated style (round canopy + thick trunk + root flare) -->
+    <!-- Tree 1 -->
+    <div class="park-tree" style="left:2%;">
+      <svg width="110" height="200" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <!-- Trunk with root flare -->
+        <path d="M42,200 Q36,178 38,160 Q32,155 28,145 Q36,148 40,155 L40,130 Q34,120 30,108 Q38,112 42,122 L44,90 Q52,65 52,40 Q58,65 66,90 L68,122 Q72,112 80,108 Q76,120 70,130 L70,155 Q74,148 82,145 Q78,155 72,160 Q74,178 68,200 Z" fill="#7B4A1E"/>
+        <!-- Root highlights -->
+        <path d="M42,185 Q36,175 30,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M68,185 Q74,175 80,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Bark texture -->
+        <path d="M49,140 Q51,130 50,118" stroke="#9B6030" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <path d="M58,145 Q60,135 59,123" stroke="#9B6030" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <!-- Round fluffy canopy — overlapping circles -->
+        <circle cx="55" cy="75" r="48" fill="#4CAF50"/>
+        <circle cx="28" cy="85" r="36" fill="#56C45A"/>
+        <circle cx="82" cy="82" r="34" fill="#56C45A"/>
+        <circle cx="42" cy="52" r="32" fill="#66D466"/>
+        <circle cx="70" cy="50" r="30" fill="#62CE62"/>
+        <circle cx="55" cy="38" r="28" fill="#72DA72"/>
+        <circle cx="30" cy="65" r="20" fill="#72DA72" opacity="0.7"/>
+        <circle cx="80" cy="62" r="18" fill="#72DA72" opacity="0.7"/>
+        <!-- Light spots -->
+        <circle cx="44" cy="52" r="10" fill="#8AE88A" opacity="0.5"/>
+        <circle cx="65" cy="44" r="8" fill="#8AE88A" opacity="0.5"/>
+      </svg>
+    </div>
+    <!-- Tree 2 (smaller) -->
+    <div class="park-tree" style="left:14%;">
+      <svg width="82" height="155" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <path d="M42,200 Q36,178 38,160 Q32,155 28,145 Q36,148 40,155 L40,130 Q34,120 30,108 Q38,112 42,122 L44,90 Q52,65 52,40 Q58,65 66,90 L68,122 Q72,112 80,108 Q76,120 70,130 L70,155 Q74,148 82,145 Q78,155 72,160 Q74,178 68,200 Z" fill="#7B4A1E"/>
+        <path d="M42,185 Q36,175 30,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M68,185 Q74,175 80,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="55" cy="75" r="48" fill="#3EA843"/>
+        <circle cx="28" cy="88" r="34" fill="#4CBB50"/>
+        <circle cx="82" cy="85" r="32" fill="#4CBB50"/>
+        <circle cx="40" cy="54" r="30" fill="#5DC85E"/>
+        <circle cx="70" cy="52" r="28" fill="#5DC85E"/>
+        <circle cx="55" cy="40" r="26" fill="#6DD46E"/>
+        <circle cx="42" cy="52" r="9" fill="#85E885" opacity="0.5"/>
+      </svg>
+    </div>
+    <!-- Tree 3 (large) -->
+    <div class="park-tree" style="left:28%;">
+      <svg width="130" height="230" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <path d="M42,200 Q36,178 38,160 Q32,155 28,145 Q36,148 40,155 L40,130 Q34,120 30,108 Q38,112 42,122 L44,90 Q52,65 52,40 Q58,65 66,90 L68,122 Q72,112 80,108 Q76,120 70,130 L70,155 Q74,148 82,145 Q78,155 72,160 Q74,178 68,200 Z" fill="#6B3D18"/>
+        <path d="M42,185 Q36,175 30,172" stroke="#8B5228" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M68,185 Q74,175 80,172" stroke="#8B5228" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M49,140 Q51,130 50,118" stroke="#8B5228" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="55" cy="72" r="52" fill="#43A847"/>
+        <circle cx="24" cy="85" r="38" fill="#52BC56"/>
+        <circle cx="86" cy="82" r="36" fill="#52BC56"/>
+        <circle cx="38" cy="48" r="34" fill="#62CC62"/>
+        <circle cx="73" cy="46" r="32" fill="#62CC62"/>
+        <circle cx="55" cy="33" r="30" fill="#72D872"/>
+        <circle cx="26" cy="62" r="22" fill="#72D872" opacity="0.7"/>
+        <circle cx="84" cy="60" r="20" fill="#72D872" opacity="0.7"/>
+        <circle cx="42" cy="48" r="12" fill="#8AE88A" opacity="0.5"/>
+        <circle cx="67" cy="42" r="10" fill="#8AE88A" opacity="0.5"/>
+      </svg>
+    </div>
+    <!-- Tree 4 -->
+    <div class="park-tree" style="left:60%;">
+      <svg width="118" height="210" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <path d="M42,200 Q36,178 38,160 Q32,155 28,145 Q36,148 40,155 L40,130 Q34,120 30,108 Q38,112 42,122 L44,90 Q52,65 52,40 Q58,65 66,90 L68,122 Q72,112 80,108 Q76,120 70,130 L70,155 Q74,148 82,145 Q78,155 72,160 Q74,178 68,200 Z" fill="#7B4A1E"/>
+        <path d="M42,185 Q36,175 30,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M68,185 Q74,175 80,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="55" cy="74" r="50" fill="#4CAF50"/>
+        <circle cx="27" cy="86" r="36" fill="#58C05C"/>
+        <circle cx="83" cy="83" r="34" fill="#58C05C"/>
+        <circle cx="40" cy="51" r="32" fill="#68D068"/>
+        <circle cx="71" cy="49" r="30" fill="#68D068"/>
+        <circle cx="55" cy="37" r="28" fill="#78DC78"/>
+        <circle cx="43" cy="51" r="10" fill="#8AE88A" opacity="0.5"/>
+      </svg>
+    </div>
+    <!-- Tree 5 (largest) -->
+    <div class="park-tree" style="left:74%;">
+      <svg width="136" height="240" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <path d="M42,200 Q36,178 38,160 Q32,155 28,145 Q36,148 40,155 L40,130 Q34,120 30,108 Q38,112 42,122 L44,90 Q52,65 52,40 Q58,65 66,90 L68,122 Q72,112 80,108 Q76,120 70,130 L70,155 Q74,148 82,145 Q78,155 72,160 Q74,178 68,200 Z" fill="#6B3D18"/>
+        <path d="M42,185 Q36,175 30,172" stroke="#8B5228" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M68,185 Q74,175 80,172" stroke="#8B5228" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M49,140 Q51,130 50,118" stroke="#8B5228" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+        <circle cx="55" cy="70" r="54" fill="#3EA843"/>
+        <circle cx="22" cy="84" r="40" fill="#4CBB50"/>
+        <circle cx="88" cy="80" r="38" fill="#4CBB50"/>
+        <circle cx="36" cy="46" r="36" fill="#5CC85C"/>
+        <circle cx="76" cy="44" r="34" fill="#5CC85C"/>
+        <circle cx="55" cy="30" r="32" fill="#6CD46C"/>
+        <circle cx="24" cy="60" r="24" fill="#6CD46C" opacity="0.7"/>
+        <circle cx="88" cy="58" r="22" fill="#6CD46C" opacity="0.7"/>
+        <circle cx="42" cy="46" r="13" fill="#85E885" opacity="0.5"/>
+        <circle cx="68" cy="40" r="11" fill="#85E885" opacity="0.5"/>
+      </svg>
+    </div>
+    <!-- Tree 6 -->
+    <div class="park-tree" style="left:89%;">
+      <svg width="90" height="165" viewBox="0 0 110 200" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+        <path d="M42,200 Q36,178 38,160 Q32,155 28,145 Q36,148 40,155 L40,130 Q34,120 30,108 Q38,112 42,122 L44,90 Q52,65 52,40 Q58,65 66,90 L68,122 Q72,112 80,108 Q76,120 70,130 L70,155 Q74,148 82,145 Q78,155 72,160 Q74,178 68,200 Z" fill="#7B4A1E"/>
+        <path d="M42,185 Q36,175 30,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M68,185 Q74,175 80,172" stroke="#9B6030" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <circle cx="55" cy="76" r="46" fill="#4CAF50"/>
+        <circle cx="29" cy="88" r="34" fill="#58C45C"/>
+        <circle cx="81" cy="85" r="32" fill="#58C45C"/>
+        <circle cx="42" cy="54" r="30" fill="#68D068"/>
+        <circle cx="70" cy="52" r="28" fill="#68D068"/>
+        <circle cx="55" cy="40" r="26" fill="#78DC78"/>
+        <circle cx="42" cy="53" r="9" fill="#8AE88A" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- Green ground -->
+    <div class="green-ground">
+      <!-- Breeze layer (swaying grass blades) -->
+      <div class="breeze-layer" id="breezeLayer"></div>
+      <div class="happy-flower" style="left:5%;animation-delay:0s;">🌸</div>
+      <div class="happy-flower" style="left:16%;animation-delay:0.3s;">🌻</div>
+      <div class="happy-flower" style="left:30%;animation-delay:0.6s;">🌺</div>
+      <div class="happy-flower" style="left:43%;animation-delay:0.1s;">🌷</div>
+      <div class="happy-flower" style="left:55%;animation-delay:0.4s;">🌼</div>
+      <div class="happy-flower" style="left:67%;animation-delay:0.7s;">🌸</div>
+      <div class="happy-flower" style="left:79%;animation-delay:0.2s;">🌻</div>
+      <div class="happy-flower" style="left:91%;animation-delay:0.5s;">🌺</div>
+    </div>
+  </div>
+
+  <!-- BIRDS flying across sky (SVG-style emoji birds with flapping) -->
+  <div class="park-bird" style="top:22%;animation-duration:28s;animation-delay:0s;font-size:1.5rem;"><span class="bird-flap">🐦</span></div>
+  <div class="park-bird" style="top:16%;animation-duration:38s;animation-delay:-14s;font-size:1.1rem;"><span class="bird-flap" style="animation-delay:0.15s;">🐦</span></div>
+  <div class="park-bird" style="top:26%;animation-duration:22s;animation-delay:-8s;font-size:0.95rem;"><span class="bird-flap" style="animation-delay:0.08s;">🐦</span></div>
+  <div class="park-bird" style="top:12%;animation-duration:44s;animation-delay:-22s;font-size:1.3rem;"><span class="bird-flap" style="animation-delay:0.22s;">🐦</span></div>
+  <div class="park-bird" style="top:19%;animation-duration:32s;animation-delay:-5s;font-size:1rem;"><span class="bird-flap" style="animation-delay:0.3s;">🕊️</span></div>
+
+  <!-- Butterflies -->
+  <div class="butterfly" style="top:30%;animation-duration:24s;animation-delay:0s;">🦋</div>
+  <div class="butterfly" style="top:35%;animation-duration:38s;animation-delay:-15s;font-size:1.1rem;">🦋</div>
+
+  <!-- Runners removed -->
+
+  <!-- Breeze grass blade generator -->
+  <script>
+    (function(){
+      const layer = document.getElementById('breezeLayer');
+      if(!layer) return;
+      const count = 80;
+      for(let i=0;i<count;i++){
+        const blade = document.createElement('div');
+        blade.className = 'grass-blade';
+        const h = 24 + Math.random()*24;
+        const del = (Math.random()*2.8).toFixed(2);
+        const dur = (2.4 + Math.random()*2).toFixed(2);
+        blade.style.cssText = `height:${h}px;animation-duration:${dur}s;animation-delay:-${del}s;`;
+        layer.appendChild(blade);
+      }
+    })();
+  </script>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">✨ TV</a>
+    <ul class="nav-links">
+      <li class="horror-link"><a href="index.html"><span>💀</span><span>Go Back to Dark</span></a></li>
+      <li><a href="mailto:tejavuppala75@gmail.com" style="color:#AA6600;background:rgba(255,200,50,0.12);border:1.5px solid rgba(255,200,50,0.3);"><span>📧</span><span>Contact Me</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="page">
+    <div class="page-content">
+
+      <!-- Hero -->
+      <div class="hire-hero" style="margin-bottom:40px;">
+        <div class="hire-badge">🎊 The Opposite Universe</div>
+        <h1 class="hire-title">
+          <span class="t1">What If You</span>
+          <span class="t2">Give Me a Job?</span>
+        </h1>
+        <p class="hire-sub">Imagine a world without haunted dashboards, ghost pipelines, or cursed data. A bright, optimistic future begins the moment you click that hire button ☀️</p>
+        <a href="mailto:tejavuppala75@gmail.com" class="btn-sunshine">🎊 Yes, Let's Make This Happen!</a>
+        <a href="index.html" class="btn-ghost">💀 Back to the Dark Side</a>
+      </div>
+
+      <!-- Before / After -->
+      <div style="margin-bottom:20px;">
+        <div class="sub-title">⚡ The Transformation</div>
+        <div class="before-after">
+          <div class="before-side">
+            <div class="ba-label ba-label-dark">☠ Before Hiring</div>
+            <div class="ba-item ba-item-dark"><span class="ba-bullet-dark">💀</span>Dashboards updated manually every week</div>
+            <div class="ba-item ba-item-dark"><span class="ba-bullet-dark">👻</span>Data pipelines breaking mysteriously at 3am</div>
+            <div class="ba-item ba-item-dark"><span class="ba-bullet-dark">🕸️</span>ML models gathering cobwebs in Jupyter notebooks</div>
+            <div class="ba-item ba-item-dark"><span class="ba-bullet-dark">⚰️</span>Reports dying in Excel spreadsheets</div>
+            <div class="ba-item ba-item-dark"><span class="ba-bullet-dark">🦇</span>Cloud costs flying off the charts</div>
+          </div>
+          <div class="arrow-mid">☀️→</div>
+          <div class="after-side">
+            <div class="ba-label ba-label-bright">✨ After Hiring Teja</div>
+            <div class="ba-item ba-item-bright"><span class="ba-bullet-bright">✅</span>Live Power BI dashboards updating <strong>automatically</strong></div>
+            <div class="ba-item ba-item-bright"><span class="ba-bullet-bright">✅</span>Airflow pipelines running smoothly, alerts configured</div>
+            <div class="ba-item ba-item-bright"><span class="ba-bullet-bright">✅</span>ML models tracked in MLflow, deployed on AWS</div>
+            <div class="ba-item ba-item-bright"><span class="ba-bullet-bright">✅</span>ETL automation saving <strong>30%+ reporting time</strong></div>
+            <div class="ba-item ba-item-bright"><span class="ba-bullet-bright">✅</span>Infrastructure optimized with right-sized AWS resources</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Outcome cards -->
+      <div style="margin-bottom:20px;">
+        <div class="sub-title">🌟 What You Get</div>
+        <div class="outcome-grid">
+          <div class="bright-card outcome-card">
+            <span class="outcome-icon">📊</span>
+            <span class="outcome-stat">30%</span>
+            <div class="outcome-title">Faster Reporting</div>
+            <div class="outcome-body">Automated dashboards replacing manual Excel work — already proven at TruEquations.</div>
+          </div>
+          <div class="bright-card outcome-card">
+            <span class="outcome-icon">🤖</span>
+            <span class="outcome-stat">91%</span>
+            <div class="outcome-title">Model Accuracy</div>
+            <div class="outcome-body">Production-ready ML models with MLflow tracking and reproducible experiment logs.</div>
+          </div>
+          <div class="bright-card outcome-card">
+            <span class="outcome-icon">⚡</span>
+            <span class="outcome-stat">10×</span>
+            <div class="outcome-title">AI-Augmented Speed</div>
+            <div class="outcome-body">Cursor + Claude Code + Vibe Coding — shipping data features faster than a traditional team.</div>
+          </div>
+          <div class="bright-card outcome-card">
+            <span class="outcome-icon">☁️</span>
+            <span class="outcome-stat">AWS</span>
+            <div class="outcome-title">Cloud-Ready</div>
+            <div class="outcome-body">Certified in AWS Cloud &amp; ML. Your data lives in scalable, cost-efficient infrastructure.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills remapped to bright -->
+      <div class="bright-card" style="margin-bottom:20px;">
+        <div class="sub-title">🎒 What I Bring to the Table</div>
+        <div class="bright-pills">
+          <div class="bright-pill">🐍 Python</div><div class="bright-pill">🗄️ SQL</div>
+          <div class="bright-pill">📊 Power BI</div><div class="bright-pill">🤖 Machine Learning</div>
+          <div class="bright-pill">☁️ AWS</div><div class="bright-pill">🔥 PySpark</div>
+          <div class="bright-pill">🌬️ Airflow</div><div class="bright-pill">⚗️ MLflow</div>
+          <div class="bright-pill">🤗 Hugging Face</div><div class="bright-pill">🔧 dbt</div>
+          <div class="bright-pill">🖱️ Cursor</div><div class="bright-pill">📊 Plotly</div>
+        </div>
+      </div>
+
+      <!-- Quick wins -->
+      <div class="bright-card" style="margin-bottom:20px;">
+        <div class="sub-title">🏆 Proven Quick Wins</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div style="font-weight:700;color:#2D1A00;font-family:'Nunito',sans-serif;margin-bottom:8px;font-size:0.9rem;">📉 Reduced reporting time by 30%</div>
+            <div style="font-size:0.8rem;color:#9B7B6A;">Built Power BI dashboards at TruEquations that eliminated weekly manual reporting cycles across 10+ business segments.</div>
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2D1A00;font-family:'Nunito',sans-serif;margin-bottom:8px;font-size:0.9rem;">🎯 91.4% salary prediction accuracy</div>
+            <div style="font-size:0.8rem;color:#9B7B6A;">Random Forest model with Bayesian tuning, deployed for USU Advanced Data Mining course of 30+ grad students.</div>
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2D1A00;font-family:'Nunito',sans-serif;margin-bottom:8px;font-size:0.9rem;">🧬 0.81 PCA variance explained</div>
+            <div style="font-size:0.8rem;color:#9B7B6A;">Reduced 500+ nutrient features while preserving biological signal for USU food composition research.</div>
+          </div>
+          <div>
+            <div style="font-weight:700;color:#2D1A00;font-family:'Nunito',sans-serif;margin-bottom:8px;font-size:0.9rem;">📧 15% better lead targeting</div>
+            <div style="font-size:0.8rem;color:#9B7B6A;">SQL-driven market trend analysis across 10+ segments improved campaign precision at TruEquations.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bright-card cta-section">
+        <h2>Ready to Brighten Your Team? 🌞</h2>
+        <p>Enough horror for one day. Let's build something great together — data pipelines, dashboards, ML models, all without the ghosts.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+          <a href="mailto:tejavuppala75@gmail.com" class="btn-sunshine">📧 Email Me Now</a>
+          <a href="tel:+14352948645" class="btn-sunshine" style="background:linear-gradient(135deg,#00CC44,#00AA88);">📞 Call Me</a>
+          <a href="index.html" class="btn-ghost">☠ Back to Horror</a>
+        </div>
+        <div style="margin-top:28px;color:#9B7B6A;font-size:0.78rem;">tejavuppala75@gmail.com &nbsp;|&nbsp; +1 435-294-8645 &nbsp;|&nbsp; Logan, Utah</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- No confetti — clean park scene -->
+</body>
+</html>

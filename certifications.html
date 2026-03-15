@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Certifications – Teja Vuppala</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;}
+    .cert-card{padding:0;overflow:hidden;text-align:center;}
+    .cert-top{padding:30px 22px 20px;position:relative;}
+    .cert-ring{width:96px;height:96px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;position:relative;}
+    .cert-ring::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg,#8B0000,#CC0000,#4A007A,#AA00CC,#8B0000);animation:ringRot 4s linear infinite;z-index:-1;}
+    .cert-ring::after{content:'';position:absolute;inset:3px;border-radius:50%;background:rgba(10,5,25,0.98);}
+    .cert-ring span{position:relative;z-index:1;}
+    @keyframes ringRot{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+    .cert-card:hover .cert-ring::before{animation-duration:1s;}
+    .cert-stamp{display:inline-flex;align-items:center;gap:4px;padding:3px 11px;border-radius:5px;font-size:0.67rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;border:1px solid;font-family:'Cinzel',serif;margin-bottom:12px;}
+    .stamp-ok{color:#44CC66;border-color:rgba(0,150,60,0.5);background:rgba(0,100,40,0.15);}
+    .cert-name{font-family:'Cinzel',serif;font-size:0.95rem;font-weight:800;color:var(--text-primary);margin-bottom:4px;line-height:1.3;}
+    .cert-issuer{font-size:0.78rem;color:#BB77FF;font-weight:600;}
+    .cert-bottom{padding:12px 18px 16px;border-top:1px solid var(--card-border);background:rgba(8,4,18,0.5);}
+    .cert-chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+    /* Flicker on hover */
+    .cert-card::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(150,0,255,0.08),transparent);transition:0.7s;pointer-events:none;}
+    .cert-card:hover::after{left:150%;}
+    .cert-cta{grid-column:1/-1;text-align:center;padding:30px;}
+    .cert-cta p{font-size:0.88rem;color:var(--text-muted);max-width:560px;margin:0 auto 20px;line-height:1.8;}
+    .cta-hl{color:#FF8855;font-weight:700;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">☠ TV</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><span>💀</span><span>Home</span></a></li>
+      <li><a href="summary.html"><span>👁️</span><span>Summary</span></a></li>
+      <li><a href="skills.html"><span>🔮</span><span>Skills</span></a></li>
+      <li><a href="experience.html"><span>⚰️</span><span>Experience</span></a></li>
+      <li><a href="education.html"><span>📜</span><span>Education</span></a></li>
+      <li><a href="certifications.html"><span>🕯️</span><span>Certs</span></a></li>
+      <li class="hire-link"><a href="whyHireMe.html"><span>✨</span><span>Hire Me</span></a></li>
+    </ul>
+  </nav>
+  <div class="page"><div class="page-content">
+    <div class="section-header reveal">
+      <div class="section-label">Professional Credentials</div>
+      <h1 class="section-title">Certifications</h1>
+      <p class="section-subtitle">Seals forged in the fires of expertise</p>
+    </div>
+    <div class="cert-grid">
+      <div class="glass-card cert-card reveal reveal-delay-1">
+        <div class="cert-top"><div class="cert-ring"><span>📊</span></div><div class="cert-stamp stamp-ok">✓ Verified</div><div class="cert-name">Data Engineering Professional Certificate</div><div class="cert-issuer">DataCamp</div></div>
+        <div class="cert-bottom"><div class="cert-chips"><span class="badge badge-blue">SQL</span><span class="badge badge-blue">Python</span><span class="badge badge-purple">Airflow</span><span class="badge badge-purple">Spark</span><span class="badge badge-green">ETL</span><span class="badge badge-green">dbt</span></div></div>
+      </div>
+      <div class="glass-card cert-card reveal reveal-delay-2">
+        <div class="cert-top"><div class="cert-ring"><span>☁️</span></div><div class="cert-stamp stamp-ok">✓ Verified</div><div class="cert-name">AWS Certified – Cloud Computing &amp; ML Foundations</div><div class="cert-issuer">Amazon Web Services</div></div>
+        <div class="cert-bottom"><div class="cert-chips"><span class="badge badge-blue">AWS S3</span><span class="badge badge-blue">EC2</span><span class="badge badge-purple">Redshift</span><span class="badge badge-green">Cloud ML</span><span class="badge badge-orange">IAM</span></div></div>
+      </div>
+      <div class="glass-card cert-card reveal reveal-delay-3">
+        <div class="cert-top"><div class="cert-ring"><span>🐍</span></div><div class="cert-stamp stamp-ok">✓ Elite+Silver</div><div class="cert-name">NPTEL Python – ELITE + Silver</div><div class="cert-issuer">NPTEL / IIT</div></div>
+        <div class="cert-bottom"><div class="cert-chips"><span class="badge badge-blue">Python</span><span class="badge badge-blue">OOP</span><span class="badge badge-purple">Algorithms</span><span class="badge badge-green">Data Structures</span><span class="badge badge-orange">ELITE</span></div></div>
+      </div>
+      <div class="glass-card cert-cta reveal reveal-delay-4">
+        <p>Complementing hands-on experience in <span class="cta-hl">data engineering</span>, <span class="cta-hl">cloud infrastructure</span>, and <span class="cta-hl">Python programming</span>...<br/>But what if you give me a job and watch the magic happen? 👇</p>
+        <a href="whyHireMe.html" class="btn-gradient">✨ See What Happens If You Hire Me</a>
+      </div>
+    </div>
+  </div></div>
+  <script src="js/main.js"></script><script src="js/scene.js"></script>
+  <script>buildHauntScene('certifications');</script>
+</body>
+</html>

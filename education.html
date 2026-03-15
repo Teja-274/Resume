@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Education – Teja Vuppala</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    @media(max-width:700px){.edu-grid{grid-template-columns:1fr;}}
+    .edu-card{padding:28px 24px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;}
+    .edu-icon{width:76px;height:76px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:2.2rem;flex-shrink:0;animation:iconHover 3.5s ease-in-out infinite;border:1px solid rgba(90,20,140,0.3);}
+    .icon-ms{background:linear-gradient(135deg,rgba(139,0,0,0.25),rgba(100,0,200,0.2));animation-delay:0s;}
+    .icon-be{background:linear-gradient(135deg,rgba(0,80,139,0.2),rgba(60,0,139,0.2));animation-delay:1.5s;}
+    @keyframes iconHover{0%,100%{transform:translateY(0) rotate(-2deg);filter:drop-shadow(0 0 8px rgba(100,0,200,0.4));}50%{transform:translateY(-6px) rotate(2deg);filter:drop-shadow(0 0 16px rgba(200,0,50,0.5));}}
+    .edu-info{flex:1;min-width:200px;}
+    .edu-school{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:900;color:var(--text-primary);margin-bottom:4px;letter-spacing:0.3px;}
+    .edu-degree{font-size:0.85rem;color:#BB77FF;font-weight:600;margin-bottom:10px;}
+    .edu-meta{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px;align-items:center;}
+    .edu-meta-tag{font-size:0.74rem;color:var(--text-muted);display:flex;align-items:center;gap:4px;}
+    .gpa-chip{display:inline-flex;align-items:baseline;gap:3px;padding:4px 12px;border-radius:7px;background:rgba(0,100,40,0.12);border:1px solid rgba(0,150,60,0.25);}
+    .gpa-num{font-family:'Cinzel',serif;font-size:1.6rem;font-weight:900;color:#44CC66;text-shadow:0 0 10px rgba(68,200,102,0.5);}
+    .gpa-denom{font-size:0.75rem;color:var(--text-muted);font-weight:600;}
+    .coursework-label{font-size:0.7rem;font-weight:700;color:var(--text-muted);font-family:'Cinzel',serif;margin-bottom:7px;letter-spacing:0.5px;}
+    .course-pills{display:flex;flex-wrap:wrap;gap:6px;}
+    .course-pill{padding:3px 10px;border-radius:6px;font-size:0.72rem;font-weight:600;background:rgba(15,8,30,0.7);border:1px solid rgba(80,20,140,0.3);color:var(--text-body);font-family:'Cinzel',serif;transition:var(--transition);}
+    .course-pill:hover{border-color:rgba(150,30,200,0.5);color:var(--text-primary);box-shadow:0 0 12px rgba(100,0,200,0.2);}
+    .stat-row{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+    @media(max-width:600px){.stat-row{grid-template-columns:1fr 1fr;}}
+    .stat-box{text-align:center;padding:22px 14px;}
+    .stat-big{font-family:'Cinzel',serif;font-size:2rem;font-weight:900;background:var(--gradient-fire);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;text-shadow:none;}
+    .stat-small{font-size:0.68rem;color:var(--text-muted);font-weight:600;font-family:'Cinzel',serif;letter-spacing:0.5px;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">☠ TV</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><span>💀</span><span>Home</span></a></li>
+      <li><a href="summary.html"><span>👁️</span><span>Summary</span></a></li>
+      <li><a href="skills.html"><span>🔮</span><span>Skills</span></a></li>
+      <li><a href="experience.html"><span>⚰️</span><span>Experience</span></a></li>
+      <li><a href="education.html"><span>📜</span><span>Education</span></a></li>
+      <li><a href="certifications.html"><span>🕯️</span><span>Certs</span></a></li>
+      <li class="hire-link"><a href="whyHireMe.html"><span>✨</span><span>Hire Me</span></a></li>
+    </ul>
+  </nav>
+  <div class="page"><div class="page-content">
+    <div class="section-header reveal">
+      <div class="section-label">Academic Background</div>
+      <h1 class="section-title">Education</h1>
+      <p class="section-subtitle">Ancient scrolls of data science knowledge</p>
+    </div>
+    <div class="edu-grid">
+      <div class="glass-card edu-card reveal reveal-delay-1">
+        <div class="edu-icon icon-ms">📜</div>
+        <div class="edu-info">
+          <div class="edu-school">Utah State University</div>
+          <div class="edu-degree">Master of Engineering, Data Science</div>
+          <div class="edu-meta"><span class="edu-meta-tag">📍 Logan, Utah</span><span class="edu-meta-tag">📅 Aug 2024 – Present</span><div class="gpa-chip"><span class="gpa-num">3.8</span><span class="gpa-denom">/ 4.0</span></div></div>
+          <div class="coursework-label">Relevant Coursework</div>
+          <div class="course-pills">
+            <span class="course-pill">Advanced Data Mining</span><span class="course-pill">Machine Learning</span><span class="course-pill">Big Data Analytics</span><span class="course-pill">Statistical Learning</span><span class="course-pill">Deep Learning</span><span class="course-pill">Data Visualization</span><span class="course-pill">Cloud Computing</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card edu-card reveal reveal-delay-2">
+        <div class="edu-icon icon-be">⚙️</div>
+        <div class="edu-info">
+          <div class="edu-school">Gokaraju Rangaraju Institute of Eng. &amp; Tech.</div>
+          <div class="edu-degree">B.E., Electronics &amp; Communication</div>
+          <div class="edu-meta"><span class="edu-meta-tag">📍 India</span><span class="edu-meta-tag">📅 Aug 2019 – May 2023</span><div class="gpa-chip"><span class="gpa-num">3.4</span><span class="gpa-denom">/ 4.0</span></div></div>
+          <div class="coursework-label">Relevant Coursework</div>
+          <div class="course-pills">
+            <span class="course-pill">Signal Processing</span><span class="course-pill">Python &amp; C</span><span class="course-pill">Data Structures</span><span class="course-pill">Probability &amp; Stats</span><span class="course-pill">Linear Algebra</span>
+          </div>
+        </div>
+      </div>
+      <div class="stat-row reveal reveal-delay-3">
+        <div class="glass-card stat-box"><span class="stat-big">3.8</span><span class="stat-small">MS GPA / 4.0</span></div>
+        <div class="glass-card stat-box"><span class="stat-big">3.4</span><span class="stat-small">BE GPA / 4.0</span></div>
+        <div class="glass-card stat-box"><span class="stat-big">2</span><span class="stat-small">Degrees</span></div>
+      </div>
+    </div>
+  </div></div>
+  <script src="js/main.js"></script><script src="js/scene.js"></script>
+  <script>buildHauntScene('education');</script>
+</body>
+</html>
