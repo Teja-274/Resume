@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teja Vuppala – Data & Analytics Engineer</title>
+  <meta name="description" content="Teja Vuppala – Data Engineer. Hiring page also included."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .hero-stage {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: var(--nav-height);
+      position: relative;
+      z-index: 1;
+    }
+    .hero-inner { text-align: center; max-width: 760px; padding: 0 36px; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 16px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: rgba(139,0,0,0.18);
+      border: 1px solid rgba(180,20,0,0.35);
+      color: #FF7755;
+      margin-bottom: 24px;
+      font-family: 'Cinzel', serif;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .dot-blink { width:6px;height:6px;border-radius:50%;background:#44CC44;box-shadow:0 0 6px rgba(68,204,68,0.7);animation:dotBlink 1.5s infinite; }
+    @keyframes dotBlink { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.3;transform:scale(1.4);} }
+
+    .hero-name {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem,8vw,5.5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      animation: fadeUp 0.6s 0.15s ease both;
+      text-shadow: 0 0 40px rgba(150,0,200,0.4), 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .hero-name-first { color: #CCC0E0; display:block; }
+    .hero-name-last  { display:block; background: var(--gradient-fire); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    .hero-role { font-size:1rem; color:var(--text-muted); margin-bottom:14px; font-family:'Cinzel',serif; animation:fadeUp 0.6s 0.28s ease both; min-height:1.6rem; letter-spacing:1px; }
+    .typed-text { color:#AA88FF; font-family:'JetBrains Mono',monospace; font-weight:500; }
+    .hero-cursor { display:inline-block;width:2px;height:1em;background:#AA88FF;margin-left:2px;vertical-align:text-bottom;animation:blink 1s step-end infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+    .hero-contacts {
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:center;
+      margin-top:14px; margin-bottom:34px;
+      animation:fadeUp 0.6s 0.38s ease both;
+    }
+    .hero-contacts a {
+      display:flex; align-items:center; gap:6px;
+      font-size:0.8rem; font-weight:500;
+      color:var(--text-muted); text-decoration:none;
+      padding:6px 13px; border-radius:6px;
+      border:1px solid var(--card-border);
+      background:var(--card-bg);
+      transition:var(--transition);
+      font-family:'Cinzel',serif; letter-spacing:0.3px;
+    }
+    .hero-contacts a:hover { color:var(--text-primary); border-color:rgba(150,30,200,0.4); background:var(--card-hover); }
+
+    .hero-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; animation:fadeUp 0.6s 0.46s ease both; }
+
+    .hero-stats {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:0;
+      margin-top:44px; border-top:1px solid var(--card-border); padding-top:32px;
+      animation:fadeUp 0.6s 0.55s ease both;
+    }
+    .stat-item { display:flex;flex-direction:column;align-items:center;padding:0 30px;border-right:1px solid var(--card-border); }
+    .stat-item:last-child { border-right:none; }
+    .stat-number { font-family:'Cinzel',serif; font-size:2.2rem; font-weight:900; background:var(--gradient-fire); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .stat-label  { font-size:0.68rem; color:var(--text-muted); text-align:center; font-family:'Cinzel',serif; letter-spacing:0.5px; margin-top:4px; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes fadeDown { from{opacity:0;transform:translateY(-8px);} to{opacity:1;transform:translateY(0);} }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">☠ TV</a>
+    <ul class="nav-links">
+      <li><a href="index.html"><span>💀</span><span>Home</span></a></li>
+      <li><a href="summary.html"><span>👁️</span><span>Summary</span></a></li>
+      <li><a href="skills.html"><span>🔮</span><span>Skills</span></a></li>
+      <li><a href="experience.html"><span>⚰️</span><span>Experience</span></a></li>
+      <li><a href="education.html"><span>📜</span><span>Education</span></a></li>
+      <li><a href="certifications.html"><span>🕯️</span><span>Certs</span></a></li>
+      <li class="hire-link"><a href="whyHireMe.html"><span>✨</span><span>Hire Me</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-stage">
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="dot-blink"></span> Available for Opportunities</div>
+      <h1 class="hero-name">
+        <span class="hero-name-first">Teja</span>
+        <span class="hero-name-last">Vuppala</span>
+      </h1>
+      <p class="hero-role"><span class="typed-text" id="typed-role"></span><span class="hero-cursor"></span></p>
+      <div class="hero-contacts">
+        <a href="tel:+14352948645">📞 +1 435-294-8645</a>
+        <a href="mailto:tejavuppala75@gmail.com">✉️ tejavuppala75@gmail.com</a>
+        <a href="#">📍 Logan, Utah 84321</a>
+      </div>
+      <div class="hero-buttons">
+        <a href="summary.html" class="btn-gradient">Descend Into My Work →</a>
+        <a href="whyHireMe.html" class="btn-outline">✨ Why Hire Me?</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-number" data-count="2" data-suffix="+">0</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-item"><span class="stat-number" data-count="3.8" data-suffix="">0</span><span class="stat-label">MS GPA / 4.0</span></div>
+        <div class="stat-item"><span class="stat-number" data-count="30" data-suffix="%">0</span><span class="stat-label">Reporting Time Saved</span></div>
+        <div class="stat-item"><span class="stat-number" data-count="91" data-suffix="%">0</span><span class="stat-label">Model Accuracy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/scene.js"></script>
+  <script>
+    buildHauntScene('home');
+    typeText(document.getElementById('typed-role'), [
+      'Data & Analytics Engineer',
+      'ML Model Developer',
+      'Pipeline Automation Warlock',
+      'Power BI Dashboard Summoner',
+    ], 80, 2200);
+    const obs = new IntersectionObserver(e => { e.forEach(x => { if(x.isIntersecting){animateCounters();obs.disconnect();} }); },{threshold:0.3});
+    const s = document.querySelector('.hero-stats');
+    if(s) obs.observe(s);
+  </script>
+</body>
+</html>
